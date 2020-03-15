@@ -20,8 +20,8 @@
         <button
           type="submit"
           class="btn"
-          :disabled="!emailValidate || !username"
-          :class="!emailValidate || !username ? 'disabled' : null"
+          :disabled="!emailValidate || !password || !nickname"
+          :class="!emailValidate || !password || !nickname ? 'disabled' : null"
         >
           회원 가입
         </button>

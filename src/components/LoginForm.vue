@@ -13,7 +13,14 @@
           <label for="password">pw: </label>
           <input id="password" type="text" v-model="password" />
         </div>
-        <button type="submit" class="btn">로그인</button>
+        <button
+          type="submit"
+          class="btn"
+          :disabled="!emailValidate || !password"
+          :class="!emailValidate || !password ? 'disabled' : null"
+        >
+          로그인
+        </button>
       </form>
       <p class="log">{{ logMessage }}</p>
     </div>
@@ -43,7 +50,7 @@ export default {
           password: this.password,
         };
         await this.$store.dispatch('LOGIN', userData);
-        // this.$router.push('/main');
+        this.$router.push('/main');
       } catch ({ response }) {
         this.logMessage = response.data;
       } finally {
