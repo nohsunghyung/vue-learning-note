@@ -60,7 +60,6 @@ export default {
     initFrom() {
       this.username = '';
       this.password = '';
-      this.nickname = '';
     },
   },
 };

@@ -97,12 +97,25 @@ a:hover {
   margin-bottom: 0.5rem;
 }
 .btn {
+  display: inline-block;
+  height: 40px;
+  line-height: 40px;
+  padding: 0 20px;
   background: #FE9616;
   color: #fff;
-  padding: 0.5rem 1.5rem;
   font-weight: 700;
+  font-size: 100%;
+  vertical-align: middle;
   border-radius: .25rem;
   border: 0 solid #dae1e7;
+}
+.btn + .btn {
+  margin-left: 10px;
+}
+.btn.outline {
+  border: 1px solid #000;
+  background-color: #fff;
+  color: #222;
 }
 .btn.disabled {
   opacity: 0.5;
