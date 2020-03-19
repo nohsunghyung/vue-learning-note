@@ -33,10 +33,13 @@ export default {
   },
   methods: {
     logoutUser() {
-      this.$store.commit('clearUserName');
-      deleteCookie('til_auth');
-      deleteCookie('til_user');
-      this.$router.push('/login');
+      const confirmChk = confirm('로그아웃 하시겠습니까?');
+      if (confirmChk) {
+        this.$store.commit('clearUserName');
+        deleteCookie('til_auth');
+        deleteCookie('til_user');
+        this.$router.push('/login');
+      }
     },
   },
 };

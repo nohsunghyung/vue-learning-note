@@ -27,6 +27,10 @@ export const router = new VueRouter({
       component: () => import('@/views/PostAddPage.vue'),
     },
     {
+      path: '/edit/:id',
+      component: () => import('@/views/EditPage.vue'),
+    },
+    {
       path: '*',
       component: () => import('@/views/NotFoundPage.vue'),
     },

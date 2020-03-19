@@ -11,4 +11,14 @@ function registerItem(postData) {
   return posts.post('/', postData);
 }
 
-export { fetchListItem, registerItem };
+// 학습노트 삭제하는 API
+function deleteItem(postId) {
+  return posts.delete(postId);
+}
+
+// 특정 학습노트 조회 API
+function fetchOneItem(postId) {
+  return posts.get(postId);
+}
+
+export { fetchListItem, registerItem, deleteItem, fetchOneItem };
