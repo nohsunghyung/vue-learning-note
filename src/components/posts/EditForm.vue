@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import { fetchOneItem } from '@/api/posts';
+import { fetchOneItem, editItem } from '@/api/posts';
 export default {
   data() {
     return {
@@ -42,8 +42,21 @@ export default {
     };
   },
   methods: {
-    submitForm() {
-      console.log(1);
+    async submitForm() {
+      const itemId = this.$route.params.id;
+      const postData = {
+        title: this.title,
+        contents: this.contents,
+      };
+      try {
+        const confirmChk = confirm('수정하시겠습니까?');
+        if (confirmChk) {
+          await editItem(itemId, postData);
+          this.$router.push('/main');
+        }
+      } catch ({ response }) {
+        this.logState = true;
+      }
     },
     initForm() {
       this.title = '';
@@ -59,7 +72,6 @@ export default {
   async created() {
     const itemId = this.$route.params.id;
     const { data } = await fetchOneItem(itemId);
-    console.log(data);
     this.title = data.title;
     this.contents = data.contents;
   },

@@ -21,4 +21,9 @@ function fetchOneItem(postId) {
   return posts.get(postId);
 }
 
-export { fetchListItem, registerItem, deleteItem, fetchOneItem };
+// 학습노트 수정하는 API
+function editItem(postId, postData) {
+  return posts.put(postId, postData);
+}
+
+export { fetchListItem, registerItem, deleteItem, fetchOneItem, editItem };
