@@ -2,9 +2,7 @@
 
 > REST API를 이용한 학습노트 애플리케이션 레포지토리 입니다.
 
-<img src="./images/main.png" width="300px" height="250px;">
-<img src="./images/register.png" width="300px" height="250px;">
-<img src="./images/signup.png" width="300px" height="250px;">
+<img src="./images/note-image.jpg" width="100%;" height="500px;">
 
 ## 설치방법
 
