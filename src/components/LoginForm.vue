@@ -62,6 +62,11 @@ export default {
       this.password = '';
     },
   },
+  created() {
+    if (this.$store.getters.isLogin) {
+      this.$router.push('/main');
+    }
+  },
 };
 </script>
 

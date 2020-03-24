@@ -18,7 +18,9 @@
         <h3>등록된 학습노트가 없습니다.</h3>
       </div>
     </template>
-    <a href="/add" class="create-button"><i class="ion-md-add"></i></a>
+    <router-link to="/add" class="create-button"
+      ><i class="ion-md-add"></i
+    ></router-link>
     <LoadingSpinner v-if="loadingStatus"></LoadingSpinner>
   </div>
 </template>
@@ -53,6 +55,9 @@ export default {
     },
   },
   created() {
+    if (!this.$store.getters.isLogin) {
+      this.$router.push('/login');
+    }
     this.fetchData();
   },
 };
