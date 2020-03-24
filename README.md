@@ -2,7 +2,7 @@
 
 > REST API를 이용한 CRUD기능의 학습노트 애플리케이션입니다.
 
-<img src="./images/note-image.jpg" width="100%;" height="500px;">
+<img src="./images/sample.gif" width="100%;" height="500px;">
 
 ## 설치방법
 
