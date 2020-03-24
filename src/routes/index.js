@@ -47,6 +47,7 @@ export const router = new VueRouter({
   ],
 });
 
+// 라우터 네비게이션
 router.beforeEach((to, from, next) => {
   if (to.meta.auth && !store.getters.isLogin) {
     alert('로그인이 필요합니다. 로그인 페이지로 이동합니다.');
