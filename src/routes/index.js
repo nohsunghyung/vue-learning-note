@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import store from '@/store/index';
+import store from '@/store/index';
 
 Vue.use(VueRouter);
 
@@ -22,14 +22,23 @@ export const router = new VueRouter({
     {
       path: '/main',
       component: () => import('@/views/MainPage.vue'),
+      meta: {
+        auth: true,
+      },
     },
     {
       path: '/add',
       component: () => import('@/views/PostAddPage.vue'),
+      meta: {
+        auth: true,
+      },
     },
     {
       path: '/edit/:id',
       component: () => import('@/views/EditPage.vue'),
+      meta: {
+        auth: true,
+      },
     },
     {
       path: '*',
@@ -38,16 +47,11 @@ export const router = new VueRouter({
   ],
 });
 
-// router.beforeEach((to, from, next) => {
-//   console.log(to);
-//   if (to.path == '/main') {
-//     if (store.getters.isLogin) {
-//       next();
-//     } else {
-//       alert('로그인이 필요합니다.');
-//       router.push('/login');
-//     }
-//   } else {
-//     next();
-//   }
-// });
+router.beforeEach((to, from, next) => {
+  if (to.meta.auth && !store.getters.isLogin) {
+    alert('로그인이 필요합니다. 로그인 페이지로 이동합니다.');
+    router.push('/login');
+  } else {
+    next();
+  }
+});
