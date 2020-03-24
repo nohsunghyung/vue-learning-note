@@ -1,6 +1,6 @@
 # Vue.js 학습 노트 애플리케이션
 
-> REST API를 이용한 학습노트 애플리케이션 레포지토리 입니다.
+> REST API를 이용한 CRUD기능의 학습노트 애플리케이션입니다.
 
 <img src="./images/note-image.jpg" width="100%;" height="500px;">
 
